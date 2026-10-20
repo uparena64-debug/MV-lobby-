@@ -3,68 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MV LOBBY</title>
+<title>MV LOBBY | Premium Gaming</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #080b20, #182454);
-  color: white;
+  color: #17233d;
+  background: linear-gradient(
+    125deg,
+    #d9f0ff,
+    #e8ddff,
+    #b7e8ff,
+    #f6dfff
+  );
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.orb {
+  position: fixed;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  filter: blur(45px);
+  opacity: .55;
+  z-index: -1;
+  animation: float 7s ease-in-out infinite;
+}
+
+.orb1 {
+  background: #62caff;
+  top: 10%;
+  left: -70px;
+}
+
+.orb2 {
+  background: #b38cff;
+  bottom: 5%;
+  right: -70px;
+  animation-delay: -3s;
+}
+
+@keyframes float {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-35px);}
+}
+
+nav {
+  margin: 20px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: 0 10px 35px #6688aa22;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.badge {
+  background: #ffffff80;
+  padding: 9px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.hero {
+  padding: 65px 20px 30px;
   text-align: center;
 }
 
-.container {
-  padding: 60px 20px;
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  font-size: 45px;
+  background: linear-gradient(145deg,#fff9,#ffffff22);
+  border: 1px solid white;
+  box-shadow:
+    0 15px 30px #6179aa44,
+    inset 0 2px 5px white;
+  animation: float 5s infinite;
 }
 
 h1 {
-  font-size: 42px;
-  color: #00eaff;
+  font-size: clamp(40px,10vw,65px);
+  margin: 30px 0 10px;
+  letter-spacing: -2px;
+  background: linear-gradient(90deg,#1648d8,#9251dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 25px;
-  padding: 30px;
-  margin-top: 30px;
+.subtitle {
+  color: #52617b;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-button {
-  background: #00eaff;
-  border: none;
-  padding: 15px 35px;
+.glass {
+  margin: 30px 20px;
+  padding: 30px 22px;
   border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,.8);
+  box-shadow:
+    0 20px 45px #657ca033,
+    inset 0 2px 3px #fff;
+  transform: perspective(1000px) rotateX(2deg);
+  transition: .4s;
 }
-</style>
-</head>
 
-<body>
-
-<div class="container">
-
-<h1>MV LOBBY</h1>
-
-<p>Free Fire Tournament Platform</p>
-
-<div class="card">
-
-<h2>Welcome to MV LOBBY</h2>
-
-<p>Join Free Fire Tournaments</p>
-
-<button onclick="alert('Download coming soon!')">
-Download APK
-</button>
-
-</div>
-
-</div>
-
-</body>
-</html>
+.glass:hover {
+  transform: perspective(1000px)
+  rotateX(0deg) translateY(-6px
